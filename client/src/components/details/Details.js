@@ -43,7 +43,7 @@ const UserPage = () => {
         edit && <form onSubmit={handleSubmit}>
             <input defaultValue={name} name='name'/>
             <input defaultValue={email} name='email'/>
-            <input type='submit'/>
+            <button type='submit'>Submit</button>
         </form>
         }
     </Styled>

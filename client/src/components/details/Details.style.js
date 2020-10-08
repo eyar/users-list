@@ -4,16 +4,14 @@ import { desktopBreakpoint } from '../../features/Themes';
 export const Styled = styled.div`
     margin: 10px;
     line-height: 1.7;
+    button{
+        font-size: 20rem;
+        background-color: ${props=>props.theme.text.primary};
+    }
     .buttons{
         display: flex;
         justify-content: space-evenly;
         margin: 18px;
-        button{
-            font-size: 20rem;
-            &:active {
-                color: blue;
-            }
-        }
     }
     img{
         border-radius: 10px;
@@ -24,9 +22,12 @@ export const Styled = styled.div`
         > *{
             margin: 10px;
         }
-        input[type=submit]{
+        button{
             width: 100px;
             margin: auto;
+            display: flex;
+            padding: 15px;
+            height: 60px;
         }
     }
     @media (min-width: ${desktopBreakpoint}px){
@@ -39,10 +40,15 @@ export const Styled = styled.div`
         .text{
             float: right;
         }
+        form button{
+            margin-top: 10px;
+        }
     }
     @media (max-width: ${desktopBreakpoint}px){
         button{
-            width: 100px;
+            width: 130px;
+            height: 70px;
+            border-radius: 10px;
         }
         img{
             display: flex;
@@ -52,8 +58,14 @@ export const Styled = styled.div`
             display: block;
             input{
                 width: 300px;
+                height: 20px;
                 display: block;
                 margin: 10px auto;
+                font-size: 20rem;
+            }
+            button{
+                height: 60px;
+                border-radius: 10px;
             }
         }
     }
