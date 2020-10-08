@@ -5,7 +5,7 @@ const Div = styled.div`
     border-radius: 50%;
     width: 10em;
     height: 10em;
-    margin: 60px auto;
+    margin: 200px auto;
     font-size: 10px;
     position: relative;
     text-indent: -9999em;

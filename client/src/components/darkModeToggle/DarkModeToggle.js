@@ -5,11 +5,11 @@ import {DarkModeToggleStyle, Span, Input} from './DarkModeToggle.style'
 
 const DarkModeToggle = () => {
   const { darkMode } = useSelector(state => state.darkMode);
-  console.log(darkMode);
+  
   const dispatch = useDispatch();
 
   return <DarkModeToggleStyle>
-      <button type="button" onClick={darkMode.disable}>
+      <button type="button">
         ☀
       </button>
       <Span>
@@ -22,7 +22,7 @@ const DarkModeToggle = () => {
         />
         <label htmlFor="dmcheck" />
       </Span>
-      <button type="button" onClick={darkMode.enable}>
+      <button type="button" >
         ☾
       </button>
     </DarkModeToggleStyle>
