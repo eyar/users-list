@@ -11,7 +11,8 @@
   },
   "git": {
     "scripts": {
-      "pre-commit": "surge --project ./client/build --domain http://absorbing-gun.surge.sh/"
+      "pre-commit": "cd client && yarn build",
+      "pre-push": "surge --project ./client/build --domain http://absorbing-gun.surge.sh/"
     }
   }
 }
