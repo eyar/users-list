@@ -27,17 +27,17 @@ const UserPage = () => {
     }
 
     return Object.keys(details).length !== 0 && <Styled>
-        <Buttons>
+        <div className='buttons'>
             <button onClick={handleEdit}>Edit</button><button onClick={()=>dispatch(removeUser(id))}>Remove User</button>
-        </Buttons>
+        </div>
         {avatar && <img src={avatar} alt='' width='128' height='128'/>}
         {
-        <Text>
+        <div className='text'>
             <div>{name}</div>
             <div>{email}</div>
             <div>{ownership}</div>
             <div>{id}</div>
-        </Text>
+        </div>
         }
         {
         edit && <form onSubmit={handleSubmit}>

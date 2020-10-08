@@ -10,13 +10,10 @@ const UsersList = () => {
     return <Styled>
         <ul>
             {
-                users.map(({name, avatar},key)=><>
-                    <li key={key} onClick={()=>dispatch(setUser({...users[key]}))}>
+                users.map(({name, avatar},key)=><li key={key} onClick={()=>dispatch(setUser({...users[key]}))}>
                         <div>{name}</div>
                         <img src={avatar} alt='' width='50' height='50'/>
-                    </li>
-                    <Separator/>
-                </>)
+                    </li>)
             }
         </ul>
     </Styled>

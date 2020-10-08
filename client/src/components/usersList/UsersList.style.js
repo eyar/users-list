@@ -1,20 +1,15 @@
 import styled from 'styled-components';
+import { desktopBreakpoint } from '../../features/Themes';
 
 export const Styled = styled.div`
-    width: 250px;
     ul{
         list-style: none;
         margin: 0;
-        width: 250px;
-        position: absolute;
-        top: 52px;
-        bottom: 0;
-        overflow-y: auto;
         padding: 0;
         li{
             display: flex;
             justify-content: space-between;
-            padding: 10px 20px;
+            padding: 10px 15px;
             cursor: pointer;
             div{
                 display: flex;
@@ -26,6 +21,16 @@ export const Styled = styled.div`
             &:hover{
                 background-color: lightgray;
             }
+        }
+    }
+    @media (min-width: ${desktopBreakpoint}px){
+        width: 270px;
+        ul{
+            width: 270px;
+            position: absolute;
+            top: 52px;
+            bottom: 0;
+            overflow-y: auto;
         }
     }
 `;

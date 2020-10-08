@@ -4,7 +4,7 @@ import {DarkModeToggleStyle, Span, Input} from './DarkModeToggle.style'
 
 const DarkModeToggle = () => {
   const darkMode = useDarkMode(false);
-
+  
   return <DarkModeToggleStyle>
       <button type="button" onClick={darkMode.disable}>
         ☀

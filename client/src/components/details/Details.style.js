@@ -1,11 +1,22 @@
 import styled from 'styled-components';
+import { desktopBreakpoint } from '../../features/Themes';
 
 export const Styled = styled.div`
     margin: 10px;
     line-height: 1.7;
+    .buttons{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 18px;
+        button{
+            font-size: 20rem;
+            &:active {
+                color: blue;
+            }
+        }
+    }
     img{
         border-radius: 10px;
-        margin-right: 10px;
     }
     form{
         display: flex;
@@ -18,21 +29,32 @@ export const Styled = styled.div`
             margin: auto;
         }
     }
-`;
-
-export const Text = styled.div`
-    float: right;
-`;
-
-export const Buttons = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-    margin: 18px;
-    button{
-        font-size: 20rem;
-        padding:0.35em 1.2em;
-        &:active {
-            color: blue;
+    @media (min-width: ${desktopBreakpoint}px){
+        button{
+            width: 150px;
+        }
+        img{
+            margin-right: 10px;
+        }
+        .text{
+            float: right;
+        }
+    }
+    @media (max-width: ${desktopBreakpoint}px){
+        button{
+            width: 100px;
+        }
+        img{
+            display: flex;
+            margin: 10px auto;
+        }
+        form{
+            display: block;
+            input{
+                width: 300px;
+                display: block;
+                margin: 10px auto;
+            }
         }
     }
 `;
