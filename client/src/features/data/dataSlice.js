@@ -30,7 +30,7 @@ const data = createSlice({
             state.users = state.users.filter(({id}) => id !== targetId);
         },
         updateUser(state, {payload}){
-            const index = state.users.findIndex(({id}) => id == payload.id)
+            const index = state.users.findIndex(({id}) => id === payload.id)
             state.users[index] = payload;
         }
     }

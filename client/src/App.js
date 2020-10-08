@@ -7,33 +7,26 @@ import Loader from './components/loader/Loader';
 import TopBar from './components/topBar/TopBar';
 import { lightTheme, darkTheme } from './features/Themes';
 import Container from './components/container/Container'
+import Error from './components/error/Error'
 
 function App() {
   const { value } = useDarkMode(false, { storageKey: null, onChange: null })
   const theme = value ? darkTheme : lightTheme;
 
-  const { isLoading, error } = useSelector(state => state.data);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch])
-
-  if (error) {
-    return (
-      <div>
-        <h1>Something went wrong...</h1>
-        <div>{error.toString()}</div>
-      </div>
-    )
-  }
-
+  
+  const { isLoading, error } = useSelector(state => state.data);
+  
   let renderedList = isLoading ? <Loader/> : <Container/>;
 
   return (
     <ThemeProvider theme={theme}>
         <TopBar/>
-        {renderedList}
+        {error ? <Error/> : renderedList}
     </ThemeProvider>
 
   );
