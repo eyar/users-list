@@ -1,5 +1,6 @@
 :root{
   font-size: 6.25%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;

@@ -14,6 +14,11 @@ const UserPage = () => {
     const handleEdit = () => {
         setEdit(true);
     }
+    
+    const handleRemove = (id) => {
+        dispatch(removeUser(id));
+        dispatch(setUser({}));
+    }
 
     const [edit,setEdit] = useState(false);
 
@@ -28,7 +33,7 @@ const UserPage = () => {
 
     return Object.keys(details).length !== 0 && <Styled>
         <div className='buttons'>
-            <button onClick={handleEdit}>Edit</button><button onClick={()=>dispatch(removeUser(id))}>Remove User</button>
+            <button onClick={handleEdit}>Edit</button><button onClick={()=>handleRemove(id)}>Remove User</button>
         </div>
         {avatar && <img src={avatar} alt='' width='128' height='128'/>}
         {
