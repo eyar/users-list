@@ -7,7 +7,6 @@ export const Styled = styled.div`
     button{
         font-size: 20rem;
         background-color: ${props=>props.theme.text.primary};
-        color: ${props=>props.theme.text.primary};
     }
     .buttons{
         display: flex;
