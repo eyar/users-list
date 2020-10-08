@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Styled, Text, Buttons } from './Details.style';
+import { Styled } from './Details.style';
 import { removeUser } from '../../features/data/dataSlice';
 import { setUser } from '../../features/userDetails/userDetailsSlice';
 import { updateUser } from '../../features/data/dataSlice';

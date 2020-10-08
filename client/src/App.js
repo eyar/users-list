@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import useDarkMode from 'use-dark-mode';
 import { ThemeProvider } from 'styled-components';
 import { fetchUsers } from './features/data/dataSlice';
 import Loader from './components/loader/Loader';
@@ -10,9 +9,9 @@ import Container from './components/container/Container'
 import Error from './components/error/Error'
 
 function App() {
-  const { value } = useDarkMode(false, { storageKey: null, onChange: null })
-  const theme = value ? darkTheme : lightTheme;
-
+  const { darkMode } = useSelector(state => state.darkMode);
+  const theme = darkMode ? darkTheme : lightTheme;
+  
   const dispatch = useDispatch();
   
   useEffect(() => {

@@ -7,13 +7,6 @@ const Contributes = () => {
     const { details: { contribute } } = useSelector(state => state.userDetails);
     const dispatch = useDispatch();
 
-    const handleChange = ({target:{value}}) => {
-        const key = value.split(' ')[0];
-        const order = value.split(' ')[1];
-        console.log({key, order});
-        contribute.sort( (a,b) => order==='asc' ? a[key] > b[key] : a[key] < b[key]);
-    }
-
     return contribute ? <Styled>
         <h2>Contributions</h2>
         <select onChange={({target:{value}})=>dispatch(setContributesOrder(value))} >

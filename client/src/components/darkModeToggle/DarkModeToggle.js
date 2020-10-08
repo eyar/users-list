@@ -1,10 +1,12 @@
 import React from 'react';
-import useDarkMode from 'use-dark-mode';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleDarkMode } from '../../features/darkMode/darkModeSlice';
 import {DarkModeToggleStyle, Span, Input} from './DarkModeToggle.style'
 
 const DarkModeToggle = () => {
-  const darkMode = useDarkMode(false);
-  
+  const { darkMode } = useSelector(state => state.darkMode);
+  const dispatch = useDispatch();
+
   return <DarkModeToggleStyle>
       <button type="button" onClick={darkMode.disable}>
         ☀
@@ -13,8 +15,8 @@ const DarkModeToggle = () => {
         <Input
           className="dmcheck"
           type="checkbox"
-          checked={darkMode.value}
-          onChange={darkMode.toggle}
+          checked={eval(darkMode)}
+          onChange={()=>dispatch(toggleDarkMode())}
           id="dmcheck"
         />
         <label htmlFor="dmcheck" />
