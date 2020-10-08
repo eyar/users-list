@@ -5,16 +5,17 @@ export const Styled = styled.div`
     ul{
         list-style: none;
         margin: 0;
-        padding: 0 20px;
         width: 250px;
         position: absolute;
         top: 52px;
         bottom: 0;
         overflow-y: auto;
+        padding: 0;
         li{
             display: flex;
             justify-content: space-between;
-            margin: 20px 0;
+            padding: 10px 20px;
+            cursor: pointer;
             div{
                 display: flex;
                 margin: auto 0;
@@ -22,6 +23,16 @@ export const Styled = styled.div`
             img{
                 border-radius: 50%;
             }
+            &:hover{
+                background-color: lightgray;
+            }
         }
     }
+`;
+
+export const Separator = styled.div`
+    width: 90%;
+    height: 1px;
+    background: gray;
+    margin: auto;
 `;
