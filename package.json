@@ -1,0 +1,17 @@
+{
+  "name": "eyar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/eyar/users-list.git",
+  "author": "Eyar <eyar.gilad@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "git-scripts": "^0.4.3",
+    "surge": "^0.21.6"
+  },
+  "git": {
+    "scripts": {
+      "pre-commit": "surge --project ./client/build --domain http://absorbing-gun.surge.sh/"
+    }
+  }
+}

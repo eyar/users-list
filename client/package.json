@@ -33,14 +33,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "git-scripts": "^0.4.3",
-    "surge": "^0.21.6"
-  },
-  "git": {
-    "scripts": {
-      "pre-commit": "surge --project ./client/build --domain http://absorbing-gun.surge.sh/"
-    }
   }
 }
