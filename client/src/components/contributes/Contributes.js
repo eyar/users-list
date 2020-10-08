@@ -1,26 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-
-const Ul = styled.ul`
-    list-style: none;
-    li{
-        display: flex;
-        justify-content: space-between;
-        line-height: 1.7;
-    }
-`;
-
-const H2 = styled.h2`
-    
-`;
+import { useSelector, useDispatch } from 'react-redux';
+import Styled from './Contributes.style';
+import {setContributesOrder} from '../../features/userDetails/userDetailsSlice';
 
 const Contributes = () => {
     const { details: { contribute } } = useSelector(state => state.userDetails);
+    const dispatch = useDispatch();
 
-    return <Ul>
+    const handleChange = ({target:{value}}) => {
+        const key = value.split(' ')[0];
+        const order = value.split(' ')[1];
+        console.log({key, order});
+        contribute.sort( (a,b) => order==='asc' ? a[key] > b[key] : a[key] < b[key]);
+    }
+
+    return <Styled>
         {contribute && <>
-            <H2>Contributions</H2>
+            <h2>Contributions</h2>
+            <select onChange={({target:{value}})=>dispatch(setContributesOrder(value))} >
+                <option value=''>Sort By</option>
+                <option value='date asc'>Date: Ascending</option>
+                <option value='date desc'>Date: Descending</option>
+                <option value='amount asc'>Contributes: Ascending</option>
+                <option value='amount desc'>Contributes: Descending</option>
+            </select>
             {
                 contribute?.map(({date, amount}, key)=><li key={key}>
                     <span>{new Date(+date).toISOString().split('T')[0].split('-').reverse().join('/')}</span><span>{amount}</span>
@@ -28,6 +31,6 @@ const Contributes = () => {
             }
         </>
         }
-    </Ul>
+    </Styled>
 }
 export default Contributes;

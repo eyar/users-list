@@ -1,44 +1,9 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeUser } from '../../features/data/dataSlice'
-import { setUser } from '../../features/userDetails/userDetailsSlice'
+import { Styled, Text, Buttons } from './Details.style';
+import { removeUser } from '../../features/data/dataSlice';
+import { setUser } from '../../features/userDetails/userDetailsSlice';
 import { updateUser } from '../../features/data/dataSlice';
-
-const Div = styled.div`
-    margin: 10px;
-    line-height: 1.7;
-    img{
-        border-radius: 10px;
-        margin-right: 10px;
-    }
-`;
-
-const Right = styled.div`
-    float: right;
-`;
-
-const Buttons = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-    margin: 18px;
-    button{
-        font-size: 20rem;
-        padding:0.35em 1.2em;
-    }
-`;
-
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    > *{
-        margin: 10px;
-    }
-    input[type=submit]{
-        width: 100px;
-        margin: auto;
-    }
-`;
 
 const UserPage = () => {
     const { details } = useSelector(state => state.userDetails);
@@ -61,26 +26,26 @@ const UserPage = () => {
         setEdit(false);
     }
 
-    return Object.keys(details).length !== 0 && <Div>
+    return Object.keys(details).length !== 0 && <Styled>
         <Buttons>
             <button onClick={handleEdit}>Edit</button><button onClick={()=>dispatch(removeUser(id))}>Remove User</button>
         </Buttons>
         {avatar && <img src={avatar} alt='' width='128' height='128'/>}
         {
-        <Right>
+        <Text>
             <div>{name}</div>
             <div>{email}</div>
             <div>{ownership}</div>
             <div>{id}</div>
-        </Right>
+        </Text>
         }
         {
-        edit && <Form onSubmit={handleSubmit}>
+        edit && <form onSubmit={handleSubmit}>
             <input defaultValue={name} name='name'/>
             <input defaultValue={email} name='email'/>
             <input type='submit'/>
-        </Form>
+        </form>
         }
-    </Div>
+    </Styled>
 }
 export default UserPage;
