@@ -5,6 +5,7 @@ import {DarkModeToggleStyle, Span, Input} from './DarkModeToggle.style'
 
 const DarkModeToggle = () => {
   const { darkMode } = useSelector(state => state.darkMode);
+  console.log(darkMode);
   const dispatch = useDispatch();
 
   return <DarkModeToggleStyle>

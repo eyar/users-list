@@ -6,6 +6,8 @@ import { desktopBreakpoint } from '../../features/Themes';
 
 const Div = styled.div`
     display: flex;
+    background-color: ${props=>props.theme.bg.primary};
+    color: ${props=>props.theme.text.primary};
     @media (min-width: ${desktopBreakpoint}px){
         margin-top: 52px;
     }

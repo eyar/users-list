@@ -44,7 +44,7 @@ export const {
     updateUser
 } = data.actions;
 
-export default data.reducer
+export default data.reducer;
 
 export const fetchUsers = () => async dispatch => {
     try {
@@ -57,6 +57,6 @@ export const fetchUsers = () => async dispatch => {
 }
 
 export async function getUsers() {
-    const data = await fetch('http://localhost:5588/mocking_G/generate?library=users&category=users&amount=100').then(res=>res.json());
+    const data = await fetch('https://radiant-chamber-11730.herokuapp.com/mocking_G/generate?library=users&category=users&amount=100').then(res=>res.json());
     return data;
 }

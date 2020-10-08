@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { desktopBreakpoint } from '../../features/Themes';
 
 export const Styled = styled.div`
+    z-index: 0;
     ul{
         list-style: none;
         margin: 0;
