@@ -6,7 +6,7 @@ export const Styled = styled.div`
     line-height: 1.7;
     button{
         font-size: 20rem;
-        background-color: ${props=>props.theme.text.primary};
+        border-radius: 10px;
     }
     .buttons{
         display: flex;
@@ -48,7 +48,6 @@ export const Styled = styled.div`
         button{
             width: 130px;
             height: 70px;
-            border-radius: 10px;
         }
         img{
             display: flex;

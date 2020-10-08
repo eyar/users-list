@@ -7,7 +7,7 @@ export const Styled = styled.div`
     top: 0;
     width: 100%;
     z-index: 1;
-    background-color: ${props=>props.theme.bg.primary};
+    background-color: ${props=>props.theme.bg};
     h1{
         font-size: 35rem;
         font-weight: bold;

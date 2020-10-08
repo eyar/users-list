@@ -5,16 +5,9 @@ import { fetchUsers } from './features/data/dataSlice';
 import { toggleDarkMode } from './features/darkMode/darkModeSlice';
 import Loader from './components/loader/Loader';
 import TopBar from './components/topBar/TopBar';
-import { lightTheme, darkTheme } from './features/Themes';
+import { GlobalStyle, lightTheme, darkTheme } from './features/Themes';
 import Container from './components/container/Container'
 import Error from './components/error/Error'
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: ${props=>props.theme.bg.primary};
-    color: ${props=>props.theme.text.primary};
-  }
-`
 
 function App() {
   const { darkMode } = useSelector(state => state.darkMode);
