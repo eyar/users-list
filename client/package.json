@@ -40,7 +40,7 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "surge --project ./client/build --domain http://absorbing-gun.surge.sh/"
+      "pre-commit": "surge --project ./client/build --domain http://absorbing-gun.surge.sh/"
     }
   }
 }
