@@ -38,8 +38,9 @@ export const Styled = styled.div`
 `;
 
 export const Separator = styled.div`
-    width: 90%;
+    width: 95%;
     height: 1px;
     background: gray;
     margin: auto;
+    float: right
 `;

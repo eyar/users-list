@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Styled, Separator } from './UsersList.style';
 import { setUser } from '../../features/userDetails/userDetailsSlice';
@@ -14,10 +14,13 @@ const UsersList = () => {
 
     return <Styled>
         <ul>
-            {users.map(({name, avatar},key)=><li key={key} onClick={()=>handleClick(key)} >
-                <div>{name}</div>
-                <img src={avatar} alt='' width='50' height='50'/>
-            </li>)
+            {users.map(({name, avatar},key)=><React.Fragment key={key}>
+                    <li key={key} onClick={()=>handleClick(key)} >
+                    <div>{name}</div>
+                    <img src={avatar} alt='' width='50' height='50'/>
+                </li>
+                <Separator/>
+            </React.Fragment>)
             }
         </ul>
     </Styled>
