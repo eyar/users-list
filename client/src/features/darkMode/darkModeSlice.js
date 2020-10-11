@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const enabledState = localStorage.getItem('dark-mode-enabled');
 const {matches} = window.matchMedia('(prefers-color-scheme: dark)');
-const enabled = typeof enabledState !== 'undefined' ? enabledState : matches;
+const enabled = typeof enabledState !== 'undefined' ? eval(enabledState) : matches;
 
 const darkModeInitialState = {
     darkMode: enabled

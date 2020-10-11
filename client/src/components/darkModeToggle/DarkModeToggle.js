@@ -16,7 +16,7 @@ const DarkModeToggle = () => {
         <Input
           className="dmcheck"
           type="checkbox"
-          checked={eval(darkMode)}
+          checked={darkMode}
           onChange={()=>dispatch(toggleDarkMode())}
           id="dmcheck"
         />

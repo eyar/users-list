@@ -11,7 +11,7 @@ import Error from './components/error/Error'
 
 function App() {
   const { darkMode } = useSelector(state => state.darkMode);
-  const theme = eval(darkMode) ? darkTheme : lightTheme;
+  const theme = darkMode ? darkTheme : lightTheme;
   
   const dispatch = useDispatch();
   
