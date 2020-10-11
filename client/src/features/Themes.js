@@ -24,4 +24,4 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const desktopBreakpoint = 1050;
+export const desktopBreakpoint = 1070;
